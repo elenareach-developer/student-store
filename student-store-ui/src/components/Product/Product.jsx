@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react"
 import "./Product.css"
-import {useCart} from "../../Contexts/CartContext"
+import {useCart} from "../../Contexts/CartContext";
+import { Link } from "react-router-dom";
 
 
 export default function Product(props) {
@@ -20,8 +21,11 @@ export default function Product(props) {
     <section className={size}>
     <div className="Cart-Container">
       <div className="Cart-Items">
+      
               <div className="image-box">
+              <Link to={`/product/${product?.id}`}>
                 <img src={product?.image} className="responsive" /> 
+                </Link>
               </div>
             <div className="description-container">
             <div className="description">
