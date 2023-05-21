@@ -1,7 +1,8 @@
 import React,{useState,useEffect} from "react"
 import "./ProductList.css"
 import {useProducts} from "../../Contexts/ProductsContext";
-import Product from"../Product/Product"
+import Product from"../Product/Product";
+import { Link } from "react-router-dom";
 
 
 export default function ProductListpr(props) {
@@ -14,10 +15,14 @@ export default function ProductListpr(props) {
     setIsSearch(props.search?true:false)
   })
   return (
-      <div className="products-container">
-        { listWithSeatch?.map((el) =>(
-            <Product key={el.key} product={el} size="smallCart"/>     
-      ))}
-        </div>
+    <>
+          <div className="products-container">
+            { listWithSeatch?.map((el) =>(
+              <Link to={`/product/${el.id}`}>
+                <Product key={el.key} product={el} size="smallCart"/> 
+              </Link>    
+          ))}
+      </div>
+  </>
   )
 }

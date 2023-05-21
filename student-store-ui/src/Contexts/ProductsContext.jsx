@@ -14,7 +14,12 @@ export const ProductsProvider = ({ children }) => {
        await setProductList(items);
        await setListWithSearch(items)
        };
-       
+
+    const SearchProductById = (itemId)=>{
+      let searchItem = productList.find(el=>el.id=itemId)
+      console.log(searchItem)
+      return searchItem
+    }
     const ProductListWithSearch = (search)=>{
       if(search.length>0){
       let searchArr = []
@@ -46,7 +51,7 @@ export const ProductsProvider = ({ children }) => {
 
   
 
-  const value = { productList,listWithSeatch,ProductListWithSearch, addItemsToProductList,  updateItemInProductList,clearProductList};
+  const value = { productList,listWithSeatch, SearchProductById, ProductListWithSearch, addItemsToProductList,  updateItemInProductList,clearProductList};
 
   return <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>;
 };

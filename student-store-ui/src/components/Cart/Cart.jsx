@@ -3,7 +3,7 @@ import "./Cart.css"
 
 export default function Cart() {
   return (
-    <div className="home">
+    <div className="cart">
       <p>Home</p>
     </div>
   )
