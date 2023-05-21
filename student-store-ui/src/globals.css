@@ -18,7 +18,7 @@ body {
 /* Add a card effect for articles */
 .card {
   background-color: white;
-  padding: 20px;
+  padding: 5px;
   margin-top: 20px;
 }
 
@@ -27,4 +27,21 @@ body {
   content: "";
   display: table;
   clear: both;
+}
+
+.add_scroll {
+  overflow-y: auto;
+  max-height: 350px; 
+}
+.greenBg{
+  background-color: lightseagreen;
+}
+.whiteText{
+  color:white
+}
+.noTop{
+  margin:0;
+}
+.smallText{
+  font-size: 14px;
 }

@@ -5,10 +5,10 @@ import {useProducts} from "../../Contexts/ProductsContext";
 export default function Search() {
   const {ProductListWithSearch} = useProducts();
   const handleChange = (event) => {
-    ProductListWithSearch(event.target.value)
+    ProductListWithSearch(event?.target.value)
   }
   return (
-    <div className="home">
+    <div className="search">
       <input type="text" id="myInput" onKeyUp={(e)=>handleChange(e)} placeholder="Search ..." />
     </div>
   )

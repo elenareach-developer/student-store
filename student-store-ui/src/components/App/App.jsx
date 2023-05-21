@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from "react"
 import Sidebar from "../Sidebar/Sidebar"
-import Home from "../Home/Home"
+import Hero from "../Hero/Hero"
+import Footer from "../Footer/Footer"
+import About from "../About/About"
 import "./App.css"
 import axios from "axios";
 import ProductList from"../ProductList/ProductList";
@@ -51,12 +53,24 @@ export default function App() {
   <div className="main">
        <Navbar />
        <div className="row">
+       <div className="card greenBg noTop">
+            <Hero />
+          </div>
           <div className="card">
             <Search />
           </div>
-          <div className="card">
+          <h3>Best Selling Products</h3>
+          <div className="card add_scroll">
             <ProductList />
-            </div>
+          </div>
+          <h3>About</h3>
+          <div className="card">
+            <About />
+          </div>
+          <h3>Contact Us</h3>
+          <div className="card">
+            <Footer />
+          </div>
         </div>
    </div>
     </div>
