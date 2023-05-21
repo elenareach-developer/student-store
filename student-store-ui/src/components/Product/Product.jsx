@@ -24,17 +24,17 @@ export default function Product(props) {
                 <img src={product?.image} className="responsive" /> 
               </div>
             <div className="description-container">
-            <div className="about">
+            <div className="description">
                 <h1 className="title">{product?.name}</h1>
                 <h3 className="subtitle">{product?.description}</h3>
               </div>
           <div className="counter-container">
               <div className="prices">
-                <div className="amount">${product?.price}</div>
+                <div className="amount whiteText">${product?.price}</div>
               </div>
               <div className="counter"> 
                   <div className="btn" onClick={()=>addItemToCart(product)}>+</div>
-                  <div className="count">{product?.count}</div>
+                  <div className="count whiteText">{product?.count}</div>
                   <div className="btn" onClick={()=>removeItemFromCart(product)}>-</div>
               </div>
             </div>

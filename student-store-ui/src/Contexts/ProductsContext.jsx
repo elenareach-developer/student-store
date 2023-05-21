@@ -5,6 +5,7 @@ export const ProductsContext = createContext();
 export const ProductsProvider = ({ children }) => {
     const [productList, setProductList] = useState([]);
     const [listWithSeatch, setListWithSearch] = useState([]);
+  
 
     const addItemsToProductList = async(items )=> {
         items.forEach((item)=>{
@@ -28,6 +29,8 @@ export const ProductsProvider = ({ children }) => {
       setListWithSearch(productList);
     }
     }
+
+    
 
     const updateItemInProductList=(item)=>{
         productList.forEach(el=>{

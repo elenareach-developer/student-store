@@ -3,13 +3,23 @@
     width: 250px;
     background: var(--pure-white);
     display: flex;
+    padding: 10px;
     flex-direction: column;
     border: solid 1px var(--border-color);
     margin:10px;
    }
+   .description{
+    background-color: #d3d0d0;
+    margin:0;
+    padding:10px;
+   }
+   .description h1{
+    padding:2px;
+    margin:1px;
+   }
    .Cart-Container{
     margin-top:10px;
-    background-color: #ffffff;
+    background-color: #343333;
     border-radius: 20px;
     box-shadow: 0px 25px 40px #1687d933;
    }
@@ -40,6 +50,7 @@
     width: 100%;
     max-width: 400px;
     height: auto;
+    max-height: 150px;
   }
    .title{
     padding-top: 5px;
