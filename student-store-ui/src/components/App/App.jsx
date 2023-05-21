@@ -4,15 +4,14 @@ import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import axios from "axios";
-
+import ProductList from"../ProductList/ProductList";
+import Search from"../Search/Search"
 import {useProducts} from "../../Contexts/ProductsContext";
-import {initialProduct} from "../../data/initialProduct";
-import Product from"../Product/Product"
 
 
 
 export default function App() {
-  const {addItemsToProductList, productList} = useProducts();
+  const {addItemsToProductList} = useProducts();
   const [eror, setError] = useState();
   const [isFetching, setIsFetching] = useState(false)
      
@@ -48,11 +47,9 @@ export default function App() {
           <Home />
         </main>
   </BrowserRouter>*/}
-  <div className="products-container">
-   { productList?.map((el) =>(
-      <Product key={el.key} product={el} size="smallCart"/>     
-))}
-  </div>
+  <Search />
+   <ProductList />
+  
     </div>
   )
 }

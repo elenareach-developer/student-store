@@ -4,14 +4,31 @@ export const ProductsContext = createContext();
 
 export const ProductsProvider = ({ children }) => {
     const [productList, setProductList] = useState([]);
+    const [listWithSeatch, setListWithSearch] = useState([]);
 
     const addItemsToProductList = async(items )=> {
         items.forEach((item)=>{
             item.count=0
         })
        await setProductList(items);
+       await setListWithSearch(items)
        };
        
+    const ProductListWithSearch = (search)=>{
+      if(search.length>0){
+      let searchArr = []
+      search = search.toUpperCase()
+      productList.forEach((el)=>{
+           if((el.name+el.discription).toUpperCase().includes(search)){
+            searchArr.push(el)
+            }   
+      })
+      setListWithSearch(searchArr);
+    }else{
+      setListWithSearch(productList);
+    }
+    }
+
     const updateItemInProductList=(item)=>{
         productList.forEach(el=>{
           if(el.id===item.id){
@@ -26,7 +43,7 @@ export const ProductsProvider = ({ children }) => {
 
   
 
-  const value = { productList,addItemsToProductList,  updateItemInProductList,clearProductList};
+  const value = { productList,listWithSeatch,ProductListWithSearch, addItemsToProductList,  updateItemInProductList,clearProductList};
 
   return <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>;
 };
