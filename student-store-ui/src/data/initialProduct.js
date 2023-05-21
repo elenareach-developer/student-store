@@ -1,4 +1,4 @@
-export default initialProduct = {
+export  const initialProduct = {
     id: 11, 
     name: 'Matching Rings', 
     category: 'accessories', 

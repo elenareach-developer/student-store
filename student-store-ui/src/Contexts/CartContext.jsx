@@ -20,7 +20,7 @@ export const CartProvider = ({ children }) => {
     let isItem = isItemOnCart(itemRemove)
     if(isItem?.count>0){
       isItem.count--;
-      updateItemInProductList(item)
+      updateItemInProductList(isItem)
       if(isItem.count>0){
           setCartItems([...cartItems, isItem]);
         }else{

@@ -14,3 +14,20 @@
   display: flex;
   flex-direction: column;
 }
+
+.products-container{
+ 
+    margin: 0;
+    padding: 5px;
+    background: linear-gradient(to bottom right, #E3F0FF, #FAFCFF);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-wrap: wrap; 
+    flex-direction: row;
+}
+.products-containe>*{
+  flex: 1 1 160px;
+}

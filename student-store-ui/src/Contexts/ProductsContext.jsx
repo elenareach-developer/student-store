@@ -8,12 +8,17 @@ export const ProductsProvider = ({ children }) => {
     const addItemsToProductList = async(items )=> {
         items.forEach((item)=>{
             item.count=0
-            console.log(item)
         })
-       await setProductList([items]);
+       await setProductList(items);
        };
+       
     const updateItemInProductList=(item)=>{
-        setProductList([...productList, item])
+        productList.forEach(el=>{
+          if(el.id===item.id){
+            el.count=item.count
+            return;
+          } })
+        setProductList(productList)
     }
     const clearProductList=()=>{
         setProductList([])
@@ -21,7 +26,7 @@ export const ProductsProvider = ({ children }) => {
 
   
 
-  const value = { productList,addItemsToProductList,  updateItemInProductList, clearProductList};
+  const value = { productList,addItemsToProductList,  updateItemInProductList,clearProductList};
 
   return <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>;
 };

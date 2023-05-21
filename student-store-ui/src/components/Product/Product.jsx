@@ -5,21 +5,23 @@ import {useCart} from "../../Contexts/CartContext"
 
 export default function Product(props) {
   const {addItemToCart, removeItemFromCart} = useCart();
-  const [product, setProduct]  = useState(props.item)
+  const [product, setProduct]  = useState(props.product)
+  const [size, setSize] = useState("product " + props.size)
 
 
   useEffect(()=>{
-    setProduct(props.item)
+    setProduct(props.product)
+    setSize("product " + props.size)
   },[props])
   
 
   return (
     <>
-    <section className="product">
+    <section className={size}>
     <div className="Cart-Container">
       <div className="Cart-Items">
               <div className="image-box">
-                <img src={product?.image}  /> 
+                <img src={product?.image} className="responsive" /> 
               </div>
             <div className="description-container">
             <div className="about">
