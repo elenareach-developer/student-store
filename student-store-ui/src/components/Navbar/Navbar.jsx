@@ -4,7 +4,11 @@ import "./Navbar.css"
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <p>Navbar</p>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
+      <a href="#">Link</a>
     </nav>
   )
 }
+

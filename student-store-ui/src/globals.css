@@ -9,3 +9,22 @@ body {
 * {
   box-sizing: border-box;
 }
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}

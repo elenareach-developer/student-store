@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from "react"
-import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import axios from "axios";
 import ProductList from"../ProductList/ProductList";
 import Search from"../Search/Search"
+import Navbar from"../Navbar/Navbar"
 import {useProducts} from "../../Contexts/ProductsContext";
 
 
@@ -47,9 +47,18 @@ export default function App() {
           <Home />
         </main>
   </BrowserRouter>*/}
-  <Search />
-   <ProductList />
-  
+   <Sidebar />
+  <div className="main">
+       <Navbar />
+       <div className="row">
+          <div className="card">
+            <Search />
+          </div>
+          <div className="card">
+            <ProductList />
+            </div>
+        </div>
+   </div>
     </div>
   )
 }
