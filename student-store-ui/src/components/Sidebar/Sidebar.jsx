@@ -1,13 +1,11 @@
 import * as React from "react"
 import "./Sidebar.css"
+import CartCount from "../CartCount/CartCount"
 
 export default function Sidebar() {
   return (
     <section className="sidebar">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#clients">Clients</a>
-          <a href="#contact">Contact</a>
+      <CartCount />
     </section>
 
 

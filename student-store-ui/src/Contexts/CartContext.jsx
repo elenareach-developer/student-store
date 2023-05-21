@@ -6,11 +6,15 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const {updateItemInProductList} = useProducts();
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [totalProducts, setTotlaProducts] = useState(0);
 
   const addItemToCart = itemAdd => {
 
    let item  = isItemOnCart(itemAdd)?isItemOnCart(itemAdd):itemAdd;
    item.count++;
+    setTotlaProducts(totalProducts+1);
+    setTotalPrice(totalPrice+Number(itemAdd.price))
     setCartItems([...cartItems, item]);
     updateItemInProductList(item)
 
@@ -20,6 +24,10 @@ export const CartProvider = ({ children }) => {
     let isItem = isItemOnCart(itemRemove)
     if(isItem?.count>0){
       isItem.count--;
+
+      setTotlaProducts(totalProducts-1);
+      setTotalPrice(totalPrice-Number(itemRemove.price))
+
       updateItemInProductList(isItem)
       if(isItem.count>0){
           setCartItems([...cartItems, isItem]);
@@ -37,7 +45,7 @@ export const CartProvider = ({ children }) => {
     return isItem?isItem:item
   }
 
-  const value = { cartItems, isItemOnCart, getItem, addItemToCart, removeItemFromCart };
+  const value = { cartItems, totalPrice, totalProducts, isItemOnCart, getItem, addItemToCart, removeItemFromCart };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

@@ -59,15 +59,15 @@ export default function App() {
           <div className="card">
             <Search />
           </div>
-          <h3>Best Selling Products</h3>
+          <h3 id="sell">Best Selling Products</h3>
           <div className="card add_scroll">
             <ProductList />
           </div>
-          <h3>About</h3>
+          <h3 id="about">About</h3>
           <div className="card">
             <About />
           </div>
-          <h3>Contact Us</h3>
+          <h3 id="contactUs">Contact Us</h3>
           <div className="card">
             <Footer />
           </div>
