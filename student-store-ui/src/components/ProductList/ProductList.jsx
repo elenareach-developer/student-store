@@ -5,7 +5,7 @@ import Product from"../Product/Product";
 import { Link } from "react-router-dom";
 
 
-export default function ProductListpr(props) {
+export default function ProductList(props) {
   const {listWithSeatch} = useProducts();
   const [search, setSearch] = useState(props.search||"")
   const [isSearch, setIsSearch] = useState(props.search?true:false)

@@ -9,24 +9,26 @@ import { Link } from "react-router-dom";
 
 export default function ProductDetails() {
   const { productId } = useParams();
-  const {SearchProductById} = useProducts();
+  const { productList, SearchProductById} = useProducts();
   const [product,setProduct] = useState(SearchProductById(productId));
-  const [noProduct,setNoProduct] = useState(true);
+  const [yesProduct,setYesProduct] = useState(false);
 
   useEffect(()=>{
     if(productId){
-    let el = SearchProductById(productId);
-    if(el){
-      setProduct(el)
-      setNoProduct(false)
+      let searchItem = productList.find(el=>{
+        return el.id==productId
+      })
+    if(searchItem){
+      setProduct(searchItem)
+      setYesProduct(true)
     }}
   },[productId])
 
   return (
     <>
      <Link to={`/`}><span className="red">Back to list</span></Link>
-    {!noProduct&&<Product key={product.key} product={product} size="bigCart"/>  }
-    {noProduct&&<div>No Product with id {productId}</div>}
+    {yesProduct&&<Product key={product.key} product={product} size="bigCart"/>  }
+    {!yesProduct&&<div>No Product with id {productId}</div>}
     </>
   )
 

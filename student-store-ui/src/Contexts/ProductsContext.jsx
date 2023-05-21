@@ -16,10 +16,13 @@ export const ProductsProvider = ({ children }) => {
        };
 
     const SearchProductById = (itemId)=>{
-      let searchItem = productList.find(el=>el.id=itemId)
-      console.log(searchItem)
+      itemId = Number(itemId)
+      let searchItem = productList.find(el=>{
+        return el.id==itemId
+      })
       return searchItem
     }
+    
     const ProductListWithSearch = (search)=>{
       if(search.length>0){
       let searchArr = []
