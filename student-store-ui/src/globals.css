@@ -12,13 +12,13 @@ body {
 .main {
   margin-left: 160px; /* Same as the width of the sidenav */
   font-size: 28px; /* Increased text to enable scrolling */
-  padding: 0px 10px;
+  padding: 0;
 }
 
 /* Add a card effect for articles */
 .card {
   background-color: white;
-  padding: 5px;
+  padding: 0;
   margin-top: 20px;
 }
 

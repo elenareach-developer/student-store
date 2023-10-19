@@ -1,4 +1,8 @@
 .hero {
- padding: 10px;
- margin:30px;
+ padding: 2rem;
+ margin:0px;
+ height: 300px;
+}
+.padText{
+    margin-top: 1rem;
 }

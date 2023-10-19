@@ -9,6 +9,10 @@ export default function Product(props) {
   const [product, setProduct]  = useState(props.product)
   const [size, setSize] = useState("product " + props.size)
 
+  const cutTheDescription = (desrtiprion)=>{
+      return desrtiprion.substring(0, 50)+ "..."
+  }
+
 
   useEffect(()=>{
     setProduct(props.product)
@@ -30,7 +34,7 @@ export default function Product(props) {
             <div className="description-container">
             <div className="description">
                 <h1 className="title">{product?.name}</h1>
-                <h3 className="subtitle">{product?.description}</h3>
+                <h3 className="subtitle">{props.size!="bigCart"?cutTheDescription(product?.description):product?.description}</h3>
               </div>
           <div className="counter-container">
               <div className="prices">
@@ -39,7 +43,7 @@ export default function Product(props) {
               <div className="counter"> 
                   <div className="btn" onClick={()=>addItemToCart(product)}>+</div>
                   <div className="count whiteText">{product?.count}</div>
-                  <div className="btn" onClick={()=>removeItemFromCart(product)}>-</div>
+                 <div className="btn" onClick={()=>removeItemFromCart(product)}>-</div>
               </div>
             </div>
             </div>

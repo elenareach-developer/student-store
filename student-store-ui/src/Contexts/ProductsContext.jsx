@@ -28,7 +28,8 @@ export const ProductsProvider = ({ children }) => {
       let searchArr = []
       search = search.toUpperCase()
       productList.forEach((el)=>{
-           if((el.name+el.discription).toUpperCase().includes(search)){
+          let setSearchDescription = (el.name+el.description+"").toUpperCase()
+           if(setSearchDescription.includes(search)){
             searchArr.push(el)
             }   
       })

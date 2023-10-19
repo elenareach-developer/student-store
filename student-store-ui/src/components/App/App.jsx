@@ -26,9 +26,9 @@ export default function App() {
       setIsFetching(true);
 
       try {
-        const res = await axios.get("http://localhost:3001/store");
-        if (res?.data?.products) {
-         await  addItemsToProductList(res.data.products);
+        const res = await axios.get("https://fakestoreapi.com/products/");
+        if (res?.data) {
+         await  addItemsToProductList(res.data);
         } else {
           setError("Error fetching products.");
         }
